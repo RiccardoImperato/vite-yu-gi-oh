@@ -1,0 +1,20 @@
+// Variables
+@use '../partials/variables' as *;
+
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*/ Reset */
+
+/* Common */
+
+body {
+    background-color: $primary-color;
+}
+
+/*/ Common */
