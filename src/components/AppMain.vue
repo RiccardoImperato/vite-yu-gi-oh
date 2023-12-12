@@ -1,15 +1,18 @@
 <script>
 import CardsList from './CardsList.vue';
+import FoundedCards from './FoundedCards.vue'
 
 export default {
     components: {
-        CardsList
+        CardsList,
+        FoundedCards
     }
 }
 </script>
 
 <template>
     <section class="container">
+        <FoundedCards />
         <CardsList />
     </section>
 </template>
