@@ -1,16 +1,19 @@
 <script>
 import CardsList from './CardsList.vue';
-import FoundedCards from './FoundedCards.vue'
+import FoundedCards from './FoundedCards.vue';
+import CardsFilter from './CardsFilter.vue';
 
 export default {
     components: {
         CardsList,
-        FoundedCards
+        FoundedCards,
+        CardsFilter
     }
 }
 </script>
 
 <template>
+    <CardsFilter />
     <section class="container">
         <FoundedCards />
         <CardsList />
@@ -21,11 +24,9 @@ export default {
 @use '../assets/partials/variables' as *;
 
 .container {
+    padding: 50px;
     display: flex;
     flex-wrap: wrap;
-    margin: 50px auto;
-    max-width: 1180px;
-    padding: 50px;
     background-color: $secondary-color;
 }
 </style>
