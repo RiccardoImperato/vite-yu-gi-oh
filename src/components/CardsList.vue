@@ -1,5 +1,4 @@
 <script>
-import axios from 'axios';
 import Card from './Card.vue';
 import { store } from '../store';
 
@@ -12,11 +11,6 @@ export default {
             store,
         };
     },
-    created() {
-        axios.get(store.apiURL).then((response) => {
-            store.cardlist = response.data.data;
-        })
-    }
 }
 </script>
 
