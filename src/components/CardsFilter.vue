@@ -20,7 +20,7 @@ export default {
     <div class="cards-filter">
         <select name="card-select" @click="$emit('search')" v-model="this.store.searchArchetype">
             <option value="">Select archetype</option>
-            <option v-for="option in store.optionList">{{ option.archetype_name }}</option>
+            <option v-for="option in this.store.optionList">{{ option.archetype_name }}</option>
         </select>
     </div>
 </template>

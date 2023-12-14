@@ -18,9 +18,16 @@ export default {
     },
     methods: {
         search() {
-            axios.get(this.store.apiURL + '?archetype=' + this.store.searchArchetype).then((response) => {
-                store.cardlist = response.data.data;
-            });
+            if (this.store.searchArchetype === '') {
+                axios.get(this.store.apiURL + '?num=20&offset=0').then((response) => {
+                    this.store.cardlist = response.data.data;
+                });
+            } else {
+                axios.get(this.store.apiURL + '?archetype=' + this.store.searchArchetype).then((response) => {
+                    this.store.cardlist = response.data.data;
+                });
+            }
+
         },
     },
     created() {
@@ -31,7 +38,7 @@ export default {
 
 <template>
     <CardsFilter @search="search" />
-    <section class="container">
+    <section class="container" v-if="this.store.cardlist.length != 0">
         <FoundedCards />
         <CardsList />
     </section>

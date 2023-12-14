@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <Card v-for="card in store.cardlist" :name="card.name" :archetype="card.archetype" :img="card.card_images" />
+    <Card v-for="card in this.store.cardlist" :name="card.name" :archetype="card.archetype" :img="card.card_images" />
 </template>
 
 <style scoped lang="scss">
